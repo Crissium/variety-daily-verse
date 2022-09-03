@@ -6,7 +6,7 @@ This is a variety plugin. You need to install [variety](https://github.com/varie
 
 # How to use
 
-Download the `verse.py` script and replace `version` with your preferred one. Then copy the script to `$HOME/.config/variety/plugins/`. Restart `variety` and go to Preferences > Effects > Quotes > Sources and Filtering, unclick all checkboxes except, of course, "Bible Gateway's Verse of the Day". Remove all tags and authors. Now it should work perfectly!
+Download the `verse.py` script and replace `version` with your preferred one. Then copy the script to `$HOME/.config/variety/plugins/`. Restart `variety` and go to Preferences > Effects > Quotes > Sources and Filtering, uncheck all checkboxes except, of course, "Bible Gateway's Verse of the Day". Remove all tags and authors. Now it should work perfectly!
 
 # Screenshots
 
