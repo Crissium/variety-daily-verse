@@ -14,7 +14,7 @@ class DailyVerse(IQuoteSource):
 			"name": "Bible Gateway's Verse of the Day",
 			"description": "A daily word of exultation",
 			"author": "Xing Yi",
-			"version": "1.0.0",
+			"version": "1.0.1",
 		}
 
 	def supports_search(self):
@@ -23,7 +23,7 @@ class DailyVerse(IQuoteSource):
 	def get_random(self):
 		version = 'ESV'
 		response = json.loads(requests.get('https://www.biblegateway.com/votd/get/?format=json&version=' + version).content)
-		return [{'quote': html.parser.HTMLParser().unescape(response['votd']['text']) + '\n' + response['votd']['display_ref'], 'author': None, 'sourceName': None, 'link': None}]
+		return [{'quote': html.parser.HTMLParser().unescape(response['votd']['text']), 'author': response['votd']['display_ref'], 'sourceName': None, 'link': None}]
 
 	def get_for_author(self, author):
 		return []
