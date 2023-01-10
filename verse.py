@@ -1,6 +1,6 @@
 import json
 import requests
-import html.parser
+from html import unescape
 from variety.plugins.IQuoteSource import IQuoteSource
 
 
@@ -23,7 +23,7 @@ class DailyVerse(IQuoteSource):
 	def get_random(self):
 		version = 'ESV'
 		response = json.loads(requests.get('https://www.biblegateway.com/votd/get/?format=json&version=' + version).content)
-		return [{'quote': html.parser.HTMLParser().unescape(response['votd']['text']), 'author': response['votd']['display_ref'], 'sourceName': None, 'link': None}]
+		return [{'quote': unescape(response['votd']['text']), 'author': response['votd']['display_ref'], 'sourceName': None, 'link': None}]
 
 	def get_for_author(self, author):
 		return []
