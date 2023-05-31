@@ -18,15 +18,18 @@ class DailyVerse(IQuoteSource):
 		}
 
 	def supports_search(self):
-		return False
+		return True
 
-	def get_random(self):
-		version = 'ESV'
+	@staticmethod
+	def get_verse(version):
 		response = json.loads(requests.get('https://www.biblegateway.com/votd/get/?format=json&version=' + version).content)
 		return [{'quote': unescape(response['votd']['text']), 'author': response['votd']['display_ref'], 'sourceName': None, 'link': None}]
 
+	def get_random(self):
+		return self.get_verse('ESV')
+
 	def get_for_author(self, author):
-		return []
+		return self.get_verse(author)
 
 	def get_for_keyword(self, keyword):
-		return []
+		return self.get_verse(keyword)
