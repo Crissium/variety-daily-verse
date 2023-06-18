@@ -14,7 +14,7 @@ First download the script with the following command:
 curl -o $HOME/.config/variety/plugins/verse.py https://raw.githubusercontent.com/Crissium/variety-daily-verse/master/verse.py
 ```
 
-Then restart `variety` and go to Preferences > Quotes > Sources and Filtering, uncheck all checkboxes except, of course, "Bible Gateway's Verse of the Day". You could specify versions using the Tags or Authors fields, or leave them blank to use the default version (ESV). Only one version is supported at a time.
+Then restart `variety` and go to Preferences > Quotes > Sources and Filtering, uncheck all checkboxes except, of course, "Bible Gateway's Verse of the Day". You could specify versions using the Tags or Authors fields, or leave them blank to use the default version (ESV). Only one _random_ version is displayed at a time.
 
 The version codes are listed [here](https://www.biblegateway.com/versions/), e.g. "English Standard Version (ESV)" has the code 'ESV'.
 
@@ -40,7 +40,7 @@ curl -o $HOME/.config/variety/plugins/verse.py https://raw.githubusercontent.com
 - 新标点和合本：简体 CUVMPS, 正體 CUVMPT
 - 新译本：简体 CNVS, 正體 CNVT
 - 和修本　神版：简体 RCU17SS, 正體 RCU17TS
-- [当代译本](https://www.translatebible.com/chinese_contemporary_bible.html)：简体 CCB, 正體 CCBT
+- [当代译本](https://wd.bible/gen.1.ccbs)：简体 CCB, 正體 CCBT
 
 **注意：`variety` 对 quotes 的长度做了限制，有时候经文会超过这个限制，导致无法显示。如果看到 “Could not find any quotes” 这样的提示，可以尝试在 `~/.config/variety/variety.conf` 中将 `max_quote_length` 的值改为 4096 或更大。**
 
